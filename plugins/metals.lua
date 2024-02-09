@@ -56,10 +56,6 @@ return {
       -- LSP mappings
       -- LSP keymaps
       local nmap = function(keys, func, desc)
-        if desc then
-          desc = desc .. " (LSP)"
-        end
-
         vim.keymap.set("n", keys, func, { desc = desc })
       end
 
@@ -70,11 +66,11 @@ return {
       nmap("gsw", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[G]oto [S]ymbols [W]orkspace")
       nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 
-      nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-      nmap("<leader>cd", vim.diagnostic.setqflist, "[C]ode [D]iagnostics")
-      nmap("<leader>f", vim.lsp.buf.format, "[F]ormat")
-      nmap("<leader>r", vim.lsp.buf.rename, "[R]ename")
-      nmap("<leader>cs", vim.lsp.buf.signature_help, "[C]ode [S]ignature")
+      nmap("<leader>ma", vim.lsp.buf.code_action, "[M]etals [A]ction")
+      nmap("<leader>md", vim.diagnostic.setqflist, "[M]etals [D]iagnostics")
+      nmap("<leader>mf", vim.lsp.buf.format, "[M]etals [F]ormat")
+      nmap("<leader>mr", vim.lsp.buf.rename, "[M]etals [R]ename")
+      nmap("<leader>ms", vim.lsp.buf.signature_help, "[M]etals [S]ignature")
 
       -- vim.keymap.set('n', '<leader>de', vim.diagnostic.setqflist({ severity = "E" }), { desc = '[D]iagnostics [E]errors'})
       -- vim.keymap.set('n', '<leader>dw', vim.diagnostic.setqflist({ severity = "W" }), { desc = '[D]iagnostics [W]arnings'})
